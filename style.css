@@ -14,7 +14,7 @@ header{
     position: relative;
     width: 100%;
     height: 70px;
-    background: black;
+    background:black;
     color: white;
     display: flex;
     align-items: center;
@@ -26,9 +26,14 @@ header{
     align-items: center;
     height: 100%;
     padding: 4%;
-    justify-content: space-evenly;
     width: 20%;
-   
+}
+.logo .fa-laptop-code{
+    font-size: 35px;
+}
+.logo h1{
+    margin-left: 5% ;
+
 }
 
 .navbar{
@@ -67,7 +72,6 @@ header{
     color: rgb(77,77,77);
     
 }
-
 ul {
     width: 60%;
 }
@@ -75,23 +79,23 @@ ul {
 ul li{
     display: inline-block;
     margin-left: 4%;
+    cursor: pointer;
 }
 
 ul li i{
-    color: white;
-}
+    display: block;
+    font-size: 22px
 
+}
 ul li a:hover{
     background: white;
     color: black;
     border-radius: 5px;
-    
-    
 }
-
 ul li a{
     color: white;
     text-decoration: none;
-    font-size: 24px;
-    padding: 1%;
+    font-size: 20px;
+    padding: auto;
+
 }
