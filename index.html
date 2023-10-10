@@ -53,8 +53,37 @@
         </nav>
     </aside>
 
+    <button class="button-mobile" onclick="toggleMenu()">
+        <i class="material-symbols-outlined">menu</i>
+        <span>Menu</span>
+    </button>
+
+    <nav class="menu-mobile" id="menu-mobile">
+        <button class="button-close" onclick="toggleMenu()">
+            <span>
+                <i class="material-symbols-outlined">close</i>
+            </span>
+        </button>
+        <button>
+            <span>
+                <i class="material-symbols-outlined">home</i>
+                <span class="mobile-text">Home</span>
+            </span>
+        </button>
+        <button>
+            <span>
+                <i class="material-symbols-outlined">tag</i>
+                <span class="mobile-text">Explorar</span>
+            </span>
+        </button>
+    </nav>
+
    <main class="main">
     <h1>Bem vindo ao site</h1>
    </main>
+
+
+
+   <script src="script.js"></script>
 </body>
 </html>
