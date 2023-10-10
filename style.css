@@ -8,18 +8,22 @@
 
 body{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #1B1C19;
 }
 
 header{
     position: relative;
     width: 100%;
     height: 70px;
-    background:black;
+    background:#0F1313;
     color: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
 
+header h1{
+    transition: all 0.3s;
 }
 .logo{
     display: flex;
@@ -49,14 +53,14 @@ header{
 
 .busca{
     position: relative;
-    width: 40%;
+    width: 70%;
     
 }
 .busca input{
     width: 80%;
-    height: 35px;
+    height: 28px;
     border: none;
-    border-radius: 8px;
+    border-radius: 20px;
     padding: 1%;
     text-indent: 10px;
     font-size: 18px;
@@ -67,13 +71,13 @@ header{
     left: -33px;
     bottom: -5px;
     z-index: 221;
-    font-size: 22px;
+    font-size: 0px;
     cursor: pointer;
     color: rgb(77,77,77);
     
 }
 ul {
-    width: 60%;
+    width: 27%;
 }
 
 ul li{
@@ -87,11 +91,7 @@ ul li i{
     font-size: 22px
 
 }
-ul li a:hover{
-    background: white;
-    color: black;
-    border-radius: 5px;
-}
+
 ul li a{
     color: white;
     text-decoration: none;
@@ -100,3 +100,91 @@ ul li a{
 
 }
 
+.sidebar{
+    position: fixed;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 240px;
+    height: 100vh;
+    padding: 120px 10px 30px 10px;
+    
+    transition: all 0.34s;
+    
+}
+
+.sidebar button{
+    height: 60px;
+    background: transparent;
+    border: 0;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    cursor: pointer;
+    text-align: left;
+    padding: 0;
+}
+
+.sidebar button > span{
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    height: 48px;
+    padding: 0px 16px 0px 12px;
+    border-radius: 24px;
+    line-height: 1;
+    transition: all 0.2s;
+    
+    
+}
+
+.sidebar button:hover > span{
+    background-color: rgba(255,255,255, 0.08);
+}
+
+.sidebar button i {
+    position: relative;
+    font-size: 32px;
+    transition: 0.2s;
+}
+
+.sidebar button span{
+    font-size: 16px;
+}
+
+.sidebar > nav{
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.main{
+    margin: auto;
+    text-align: center;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+@media (width < 920px){
+    header div > h1{
+        opacity: 0;
+        visibility: hidden;
+    }
+    .sidebar{
+        width: 72px;
+    }
+    .sidebar button > span{
+        width: 50px;
+    }
+
+    .sidebar button > span > span{
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .main{
+        transition: margin 0.4s;
+        margin-left: 78px;
+    }
+}
