@@ -191,13 +191,16 @@ ul li a{
     background: transparent;
     color: white;
     border: 0;
+    cursor: pointer;
 }
 .button-mobile span{
     font-size: 22px;
     margin-left: 8px;
+    cursor: pointer;
 }
 .button-close span i{
     font-size: 42px;
+    c
 
 }
 
