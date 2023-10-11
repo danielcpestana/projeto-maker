@@ -1,17 +1,18 @@
 @charset "UTF-8";
 
+ /*Configurações gerais de estilização*/
+
 *{
     margin: 0px;
     padding: 0px;
     font-family: 'poppins', sans-serif;
-    
 }
-
+/*Corpo do site*/
 body{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     background-color: #1B1C19;
 }
-
+/*Config geral para cabeça do site*/
 header{
     position: relative;
     width: 100%;
@@ -22,10 +23,11 @@ header{
     align-items: center;
     justify-content: space-between;
 }
-
+/*Transição do texto logo*/
 header h1{
     transition: all 0.3s;
 }
+/*Logo*/
 .logo{
     display: flex;
     align-items: center;
@@ -33,14 +35,16 @@ header h1{
     padding: 4%;
     width: 20%;
 }
+
+/*Tamanho da logo*/
 .logo .fa-laptop-code{
     font-size: 35px;
 }
+/*distancia entre logo e texto logo*/
 .logo h1{
     margin-left: 5% ;
-
 }
-
+/*Geral barra de pesquisa do site */
 .navbar{
     position: relative;
     width: 70%;
@@ -49,14 +53,13 @@ header h1{
     display: flex;
     align-items: center;
     justify-content: space-between;
-
 }
 
 .busca{
     position: relative;
     width: 70%;
-    
 }
+/*Configuração input de texto*/
 .busca input{
     width: 80%;
     height: 28px;
@@ -77,6 +80,7 @@ header h1{
     color: rgb(77,77,77);
     
 }
+/*Configurações ancora de login e saida do site*/
 ul {
     width: 27%;
 }
@@ -101,6 +105,8 @@ ul li a{
 
 }
 
+/*Barra de navegação lateral do site*/
+
 .sidebar{
     position: fixed;
     top: 0;
@@ -110,12 +116,11 @@ ul li a{
     width: 240px;
     height: 100vh;
     padding: 120px 10px 30px 10px;
-    
     transition: all 0.34s;
     
 }
 
-.sidebar button{
+.sidebar a{
     height: 60px;
     background: transparent;
     border: 0;
@@ -126,7 +131,7 @@ ul li a{
     padding: 0;
 }
 
-.sidebar button > span{
+.sidebar a > span{
     display: inline-flex;
     align-items: center;
     gap: 12px;
@@ -139,17 +144,17 @@ ul li a{
     
 }
 
-.sidebar button:hover > span{
+.sidebar a:hover > span{
     background-color: rgba(255,255,255, 0.08);
 }
 
-.sidebar button i {
+.sidebar a i {
     position: relative;
     font-size: 32px;
     transition: 0.2s;
 }
 
-.sidebar button span{
+.sidebar a span{
     font-size: 16px;
 }
 
@@ -160,29 +165,7 @@ ul li a{
     width: 100%;
 }
 
-@media (width < 920px){
-    header div > h1{
-        opacity: 0;
-        visibility: hidden;
-    }
-    .sidebar{
-        width: 72px;
-    }
-    .sidebar button > span{
-        width: 50px;
-    }
-
-    .sidebar button > span > span{
-        opacity: 0;
-        visibility: hidden;
-    }
-
-    .main{
-        transition: margin 0.4s;
-        margin-left: 78px;
-    }
-}
-
+/*Botão para o menu dos dispositivos moveis*/
 .button-mobile{
     display: none;
     align-self: flex-start;
@@ -193,14 +176,16 @@ ul li a{
     border: 0;
     cursor: pointer;
 }
+
 .button-mobile span{
     font-size: 22px;
     margin-left: 8px;
     cursor: pointer;
 }
+
 .button-close span i{
     font-size: 42px;
-    c
+    
 
 }
 
@@ -224,7 +209,7 @@ ul li a{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 2vh;
+    padding-top: 25vh;
     overflow: hidden;
 }
 
@@ -245,7 +230,7 @@ ul li a{
     margin-left: 8px;
 }
 
-
+/*Configurações da tela principal(texto, perfile posts)*/
 main{
     margin: auto;
     text-align: center;
@@ -309,22 +294,3 @@ main{
 }
 
 
-@media (max-width: 520px){
-    .sidebar{
-        display: none;
-    }
-    .button-mobile{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        
-    }
-
-    ul li a{
-        display: none;
-        
-    }
-    .main{
-        margin-left: 6px;
-    }
-}
