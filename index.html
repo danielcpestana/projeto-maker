@@ -10,26 +10,23 @@
     <title>Maker</title>
 </head>
 <body>
-    <!-- Parte da cabeça do site-->
+    <!-- Cabeçalho do site -->
     <header>
-        <!--Inicio da logo do site-->
+        <!-- Logo do site -->
         <div class="logo">
-            
-                <i class="fa-solid fa-laptop-code"></i>
-                <h1>Maker</h1>
-            
+            <i class="fa-solid fa-laptop-code"></i>
+            <h1>Maker</h1>
         </div>
-        <!--Barra de pesquisa do site-->
+        <!-- Barra de pesquisa e âncoras de login/sair -->
         <div class="navbar">
             <div class="busca">
-                <input type="text" name="" id="" placeholder="Pesquise...">
-                <i id="buscaIcon" class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" name="" id="search-input" placeholder="Pesquise..." oninput="searchPosts()" onkeydown="handleSearchInput(event)" >
+                <i id="buscaIcon" class="fas fa-search" onclick="searchPosts()"></i>
             </div>
-            <!-- Ancoras para tela de login e sair do perfil-->
             <ul>
                 <li>
                     <i class="fa-solid fa-user"></i>
-                    <a href="#">Entrar</a>
+                    <a href="login.html">Entrar</a>
                 </li>
                 <li>
                     <i class="fa-solid fa-arrow-right-from-bracket"></i>
@@ -38,13 +35,14 @@
             </ul>
         </div>
     </header>
-    <!-- Inicio da barra de navegação lateral-->
+    <!-- Barra de navegação lateral -->
     <aside class="sidebar">
         <nav>
             <a href="index.html">
                 <span>
                     <i class="fa-solid fa-house"></i>
-                    <span>Home</span>       
+                    <span>Home</span>
+                </span>
             </a>
             <a href="programacao.html">
                 <span>
@@ -60,50 +58,165 @@
             </a>
         </nav>
     </aside>
-    <!--Botão do menu para dispositivos moveis-->
+    <!-- Botão do menu para dispositivos móveis -->
     <button class="button-mobile" onclick="toggleMenu()">
         <i class="material-symbols-outlined">menu</i>
         <span>Menu</span>
     </button>
-    <!--Menu de navegação para dispositivos moveis-->
+    <!-- Menu de navegação para dispositivos móveis -->
     <nav class="menu-mobile" id="menu-mobile">
         <button class="button-close" onclick="toggleMenu()">
             <span>
                 <i class="material-symbols-outlined">close</i>
             </span>
         </button>
-
-            <a href="#"><i class="fa-solid fa-house"></i><span>&nbsp;Home</span></a>
-
-            <a href="programacao.html"><i class="fa-solid fa-terminal"></i><span>&nbsp;Programação</span></a>
-
-            <a href="marketing.html"><i class="fa-solid fa-bullhorn"></i><span>&nbsp;Marketing</span></a>   
+        <a href="#"><i class="fa-solid fa-house"></i><span>&nbsp;Home</span></a>
+        <a href="programacao.html"><i class="fa-solid fa-terminal"></i><span>&nbsp;Programação</span></a>
+        <a href="marketing.html"><i class="fa-solid fa-bullhorn"></i><span>&nbsp;Marketing</span></a>
     </nav>
-    </nav>
-            <!--Inicio do conteudo principal-->
-   <main>
-     <div class="post">
-        <!--FOTO DO USUARIO-->
-        <div class="user-profile">
-            <img src="imagens/icone-usuario.png" alt="">
-            <div>
-                <p>Profile User</p>
-                <small>Público <i class="fa-solid fa-caret-down"></i></small>
+    <!-- Conteúdo principal -->
+    <main>
+        <div class="post">
+            <!-- Foto do usuário -->
+            <div class="user-profile">
+
+                <img id="imagem-perfil" src="imagens/Gojo-Satoru.jpg" alt="">
+                
+            </div>
+            <!-- Caixa de texto para post -->
+            <div class="post-txt">
+
+                <textarea id="post-textarea" rows="2" placeholder="O que você está pensando?"></textarea>
+
+                <div class="add-links">
+                    <input type="button" value="Enviar"onclick="addPost()">
+                </div>
+
             </div>
         </div>
-        <!--INICIO DA CAIXA DE TEXTO PARA POST-->
-     <div class="post-txt">
-        <textarea rows="3" placeholder="O que você está pensando?"></textarea>
-        <!--links para upload de imagens-->
-        <div class="add-links">
-            <input type="button" value="Enviar">
-        </div>
-     </div> 
-     </div>
-     
-     </div>
-   </main>
 
-   <script src="js/script.js"></script>
+        <div id="post-container"></div>
+      
+        <!-- Posts aleatorios de Exemplo-->
+        <div class="post example-post">
+            <div class="user-profile">
+               
+                <img id="imagem-perfil" src="imagens/gato.jpg" alt="Nome do Usuário 1"> <p>TechExplorer</p>
+            </div>
+            <div class="post-txt">
+                <p>Para aqueles que estão começando com projetos maker, lembre-se de sempre fazer muita pesquisa e planejamento antes de começar. É a chave para o sucesso! </p>
+            </div>
+            
+            <!-- Seção de Comentários -->
+            <div class="comments">
+                <h2>Comentários</h2>
+                <div class="comment-list" id="comment-list"></div>
+                <div class="comment-input">
+                    <input type="text" placeholder="Adicione um comentário">
+                    <button onclick="addComment(this)">Comentar</button>
+                </div>
+            </div>
+            
+            <!-- Botão de Curtir (sem contagem) -->
+            <button class="like-button" onclick="likePost(this)">Curtir</button>
+        </div>
+        <div class="post example-post">
+            <div class="user-profile">
+                <img id="imagem-perfil" src="imagens/lilo.jpg" alt="Nome do Usuário 1">
+                <p>InnovatorX</p>
+            </div>
+            <div class="post-txt">
+                <p>Encontrei uma ótima fonte de recursos gratuitos para projetos maker. Compartilhando o link aqui: [Inserir URL]. Espero que seja útil para vocês! </p>
+            </div>
+            
+            <!-- Seção de Comentários -->
+            <div class="comments">
+                <h2>Comentários</h2>
+                <div class="comment-list" id="comment-list"></div>
+                <div class="comment-input">
+                    <input type="text" placeholder="Adicione um comentário">
+                    <button onclick="addComment(this)">Comentar</button>
+                </div>
+            </div>
+            
+            <!-- Botão de Curtir (sem contagem) -->
+            <button class="like-button" onclick="likePost(this)">Curtir</button>
+        </div>
+        <div class="post example-post">
+            <div class="user-profile">
+                <img id="imagem-perfil" src="imagens/fotografia-para-perfil2.jpg" alt="Nome do Usuário 1" >
+                <p>CodeWizard</p>
+            </div>
+            <div class="post-txt">
+                <p>Procurando uma ideia para um projeto maker no final de semana? Que tal construir um pequeno sistema de automação residencial usando um Raspberry Pi? </p>
+            </div>
+            
+            <!-- Seção de Comentários -->
+            <div class="comments">
+                <h2>Comentários</h2>
+                <div class="comment-list" id="comment-list"></div>
+                <div class="comment-input">
+                    <input type="text" placeholder="Adicione um comentário">
+                    <button onclick="addComment(this)">Comentar</button>
+                </div>
+            </div>
+            
+            <!-- Botão de Curtir (sem contagem) -->
+            <button class="like-button" onclick="likePost(this)">Curtir</button>
+        </div>
+        <div class="post example-post">
+            <div class="user-profile">
+                <img id="imagem-perfil" src="imagens/anime1.jpeg" alt="Nome do Usuário 1">
+                <p>DesignNinja</p>
+            </div>
+            <div class="post-txt">
+                <p>Minha mais recente impressão 3D ficou incrível! Estou realmente impressionado com o que essa tecnologia pode fazer. </p>
+            </div>
+            
+            <!-- Seção de Comentários -->
+            <div class="comments">
+                <h2>Comentários</h2>
+                <div class="comment-list" id="comment-list"></div>
+                <div class="comment-input">
+                    <input type="text" placeholder="Adicione um comentário">
+                    <button onclick="addComment(this)">Comentar</button>
+                </div>
+            </div>
+            
+            <!-- Botão de Curtir (sem contagem) -->
+            <button class="like-button" onclick="likePost(this)">Curtir</button>
+        </div>
+        <div class="post example-post">
+            <div class="user-profile">
+                <img id="imagem-perfil" src="imagens/pato.jpg" alt="Nome do Usuário 1">
+                <p>PrintMaster</p>
+            </div>
+            <div class="post-txt">
+                <p>Compartilhando meu mais recente projeto maker! Acabei de construir um robô controlado por Bluetooth. Foi um desafio divertido, mas estou muito satisfeito com o resultado. </p>
+            </div>
+            
+            <!-- Seção de Comentários -->
+            <div class="comments">
+                <h2>Comentários</h2>
+                <div class="comment-list" id="comment-list"></div>
+                <div class="comment-input">
+                    <input type="text" placeholder="Adicione um comentário">
+                    <button onclick="addComment(this)">Comentar</button>
+                </div>
+            </div>
+            
+            <!-- Botão de Curtir (sem contagem) -->
+            <button class="like-button" onclick="likePost(this)">Curtir</button>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2023. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    
+    
+    <script src="js/script.js"></script>
+    <script src="js/localStorage.js"></script>
 </body>
 </html>

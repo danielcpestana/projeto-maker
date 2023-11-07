@@ -10,22 +10,19 @@
     <title>Maker</title>
 </head>
 <body>
-    <!-- Parte da cabeça do site-->
+    <!-- Cabeçalho do site -->
     <header>
-        <!--Inicio da logo do site-->
+        <!-- Logo do site -->
         <div class="logo">
-            
-                <i class="fa-solid fa-laptop-code"></i>
-                <h1>Maker</h1>
-            
+            <i class="fa-solid fa-laptop-code"></i>
+            <h1>MakerMarketing</h1>
         </div>
-        <!--Barra de pesquisa do site-->
+        <!-- Barra de pesquisa e âncoras de login/sair -->
         <div class="navbar">
             <div class="busca">
                 <input type="text" name="" id="" placeholder="Pesquise...">
                 <i id="buscaIcon" class="fa-solid fa-magnifying-glass"></i>
             </div>
-            <!-- Ancoras para tela de login e sair do perfil-->
             <ul>
                 <li>
                     <i class="fa-solid fa-user"></i>
@@ -38,13 +35,14 @@
             </ul>
         </div>
     </header>
-    <!-- Inicio da barra de navegação lateral-->
+    <!-- Barra de navegação lateral -->
     <aside class="sidebar">
         <nav>
             <a href="index.html">
                 <span>
                     <i class="fa-solid fa-house"></i>
-                    <span>Home</span>       
+                    <span>Home</span>
+                </span>
             </a>
             <a href="programacao.html">
                 <span>
@@ -60,51 +58,160 @@
             </a>
         </nav>
     </aside>
-    <!--Botão do menu para dispositivos moveis-->
+    <!-- Botão do menu para dispositivos móveis -->
     <button class="button-mobile" onclick="toggleMenu()">
         <i class="material-symbols-outlined">menu</i>
         <span>Menu</span>
     </button>
-    <!--Menu de navegação para dispositivos moveis-->
+    <!-- Menu de navegação para dispositivos móveis -->
     <nav class="menu-mobile" id="menu-mobile">
         <button class="button-close" onclick="toggleMenu()">
             <span>
                 <i class="material-symbols-outlined">close</i>
             </span>
         </button>
-
-            <a href="index.html"><i class="fa-solid fa-house"></i><span>&nbsp;Home</span></a>
-
-            <a href="programacao.html"><i class="fa-solid fa-terminal"></i><span>&nbsp;Programação</span></a>
-
-            <a href="marketing.html"><i class="fa-solid fa-bullhorn"></i><span>&nbsp;Marketing</span></a>   
+        <a href="#"><i class="fa-solid fa-house"></i><span>&nbsp;Home</span></a>
+        <a href="programacao.html"><i class="fa-solid fa-terminal"></i><span>&nbsp;Programação</span></a>
+        <a href="marketing.html"><i class="fa-solid fa-bullhorn"></i><span>&nbsp;Marketing</span></a>
     </nav>
-    </nav>
-            <!--Inicio do conteudo principal-->
-   <main>
-    <h1>Marketing</h1>
-     <div class="post">
-        <!--FOTO DO USUARIO-->
-        <div class="user-profile">
-            <img src="imagens/icone-usuario.png" alt="">
-            <div>
-                <p>Profile User</p>
-                <small>Público <i class="fa-solid fa-caret-down"></i></small>
+    <!-- Conteúdo principal -->
+    <main>
+        <div class="post">
+            <!-- Foto do usuário -->
+            <div class="user-profile">
+
+                <img id="imagem-perfil" src="imagens/Gojo-Satoru.jpg" alt="">
+                
+            </div>
+            <!-- Caixa de texto para post -->
+            <div class="post-txt">
+
+                <textarea id="post-textarea" rows="2" placeholder="O que você está pensando?"></textarea>
+
+                <div class="add-links">
+                    <input type="button" value="Enviar"onclick="addPost()">
+                </div>
+
             </div>
         </div>
-        <!--INICIO DA CAIXA DE TEXTO PARA POST-->
-     <div class="post-txt">
-        <textarea rows="3" placeholder="O que você está pensando?"></textarea>
-        <!--links para upload de imagens-->
-        <div class="add-links">
-            <input type="button" value="Enviar">
-        </div>
-     </div> 
-     </div>
-     
-     </div>
-   </main>
 
-   <script src="js/script.js"></script>
+        <div id="post-container"></div>
+      
+        <!-- Posts aleatorios de Exemplo-->
+        <div class="post example-post">
+            <div class="user-profile">
+               
+                <img id="imagem-perfil" src="imagens/tokyo.jpg" alt="Nome do Usuário 1"> <p>CraftyInventor</p>
+            </div>
+            <div class="post-txt">
+                <p>Se você é novo na comunidade "maker" e está se sentindo um pouco perdido, não se preocupe! Começar é mais fácil do que parece. Neste post, compartilho dicas e recursos para ajudar os iniciantes a dar os primeiros passos no emocionante mundo do "faça você mesmo". </p>
+            </div>
+            
+            <!-- Seção de Comentários -->
+            <div class="comments">
+                <h2>Comentários</h2>
+                <div class="comment-list" id="comment-list"></div>
+                <div class="comment-input">
+                    <input type="text" placeholder="Adicione um comentário">
+                    <button onclick="addComment(this)">Comentar</button>
+                </div>
+            </div>
+            
+            <!-- Botão de Curtir (sem contagem) -->
+            <button class="like-button" onclick="likePost(this)">Curtir</button>
+        </div>
+        <div class="post example-post">
+            <div class="user-profile">
+                <img id="imagem-perfil" src="imagens/51.jpg" alt="Nome do Usuário 1">
+                <p>DIYMastermind</p>
+            </div>
+            <div class="post-txt">
+                <p>Olá pessoal, estou trabalhando em um projeto eletrônico e estou com dúvidas sobre como dimensionar o resistor apropriado. Alguém pode me dar algumas dicas ou recursos para entender melhor como escolher o valor certo? </p>
+            </div>
+            
+            <!-- Seção de Comentários -->
+            <div class="comments">
+                <h2>Comentários</h2>
+                <div class="comment-list" id="comment-list"></div>
+                <div class="comment-input">
+                    <input type="text" placeholder="Adicione um comentário">
+                    <button onclick="addComment(this)">Comentar</button>
+                </div>
+            </div>
+            
+            <!-- Botão de Curtir (sem contagem) -->
+            <button class="like-button" onclick="likePost(this)">Curtir</button>
+        </div>
+        <div class="post example-post">
+            <div class="user-profile">
+                <img id="imagem-perfil" src="imagens/girl.jpg" alt="Nome do Usuário 1" >
+                <p>MakerArtisan</p>
+            </div>
+            <div class="post-txt">
+                <p>Se você é um entusiasta do "faça você mesmo", certamente precisa das ferramentas certas para o trabalho. Neste post, compartilho uma lista de ferramentas essenciais para qualquer maker, desde chaves de fenda e alicates até impressoras 3D e osciloscópios. </p>
+            </div>
+            
+            <!-- Seção de Comentários -->
+            <div class="comments">
+                <h2>Comentários</h2>
+                <div class="comment-list" id="comment-list"></div>
+                <div class="comment-input">
+                    <input type="text" placeholder="Adicione um comentário">
+                    <button onclick="addComment(this)">Comentar</button>
+                </div>
+            </div>
+            
+            <!-- Botão de Curtir (sem contagem) -->
+            <button class="like-button" onclick="likePost(this)">Curtir</button>
+        </div>
+        <div class="post example-post">
+            <div class="user-profile">
+                <img id="imagem-perfil" src="imagens/midnight.jpg" alt="Nome do Usuário 1">
+                <p>CreativeTinker</p>
+            </div>
+            <div class="post-txt">
+                <p>Tenho o objetivo de construir minha própria estação meteorológica em casa, mas estou um pouco perdido sobre por onde começar. Alguém já fez algo parecido e pode compartilhar dicas ou recursos úteis? </p>
+            </div>
+            
+            <!-- Seção de Comentários -->
+            <div class="comments">
+                <h2>Comentários</h2>
+                <div class="comment-list" id="comment-list"></div>
+                <div class="comment-input">
+                    <input type="text" placeholder="Adicione um comentário">
+                    <button onclick="addComment(this)">Comentar</button>
+                </div>
+            </div>
+            
+            <!-- Botão de Curtir (sem contagem) -->
+            <button class="like-button" onclick="likePost(this)">Curtir</button>
+        </div>
+        <div class="post example-post">
+            <div class="user-profile">
+                <img id="imagem-perfil" src="imagens/olho.jpg" alt="Nome do Usuário 1">
+                <p>BuildCraftsmen</p>
+            </div>
+            <div class="post-txt">
+                <p>A sustentabilidade é importante, e a reciclagem criativa pode ser uma maneira fantástica de fazer projetos makers únicos. Neste post, compartilho ideias e dicas sobre como transformar objetos reciclados em obras-primas "maker".</p>
+            </div>
+            
+            <!-- Seção de Comentários -->
+            <div class="comments">
+                <h2>Comentários</h2>
+                <div class="comment-list" id="comment-list"></div>
+                <div class="comment-input">
+                    <input type="text" placeholder="Adicione um comentário">
+                    <button onclick="addComment(this)">Comentar</button>
+                </div>
+            </div>
+            
+            <!-- Botão de Curtir (sem contagem) -->
+            <button class="like-button" onclick="likePost(this)">Curtir</button>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2023 Seu Nome. Todos os direitos reservados.</p>
+      </footer>
+    <script src="js/script.js"></script>
 </body>
 </html>

@@ -6,6 +6,7 @@
     margin: 0px;
     padding: 0px;
     font-family: 'poppins', sans-serif;
+  
 }
 /*Corpo do site*/
 body{
@@ -72,10 +73,11 @@ header h1{
 
 #buscaIcon{
     position: relative;
-    left: -33px;
+    left: -40px;
     bottom: -5px;
+    top: 4px;
     z-index: 221;
-    font-size: 0px;
+    font-size:25px;
     cursor: pointer;
     color: rgb(77,77,77);
     
@@ -129,6 +131,7 @@ ul li a{
     cursor: pointer;
     text-align: left;
     padding: 0;
+    
 }
 
 .sidebar a > span{
@@ -233,9 +236,10 @@ ul li a{
 /*Configurações da tela principal(texto, perfile posts)*/
 main{
     margin: auto;
-    text-align: center;
     overflow: hidden;
     margin-top: 20px;
+    margin-bottom: 40px;
+    
 }
 
 main h1{
@@ -250,10 +254,12 @@ main h1{
     padding: 20px;
     color: black;
     margin: 0 auto; /* Isso centraliza o elemento horizontalmente */
+    
 }
 .user-profile img{
-    width: 45px;
+    width: 55px;
     margin-right: 10px;
+    
 }
 
 .user-profile {
@@ -262,40 +268,198 @@ main h1{
 }
 
 .user-profile p {
-    margin-bottom: -5px;
-    
+    margin-bottom: 10px;
+    font-size: 16px; /* Tamanho da fonte do nome de usuário */
 }
 
-.user-profile small{
-    font-size: 12px;
-    margin-left: -32px;
+#imagem-perfil{
+    border-radius: 50%;
+    
+
 }
+
+
 
 .post-txt{
-    padding-left: 55px;
-    padding-top: 20px;
+    width: 100%;
+    padding-left: 60px;
 }
 
 .post-txt textarea{
     width: 100%;
     border: 0;
     outline: 0;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.336);
     background: transparent;
     resize: none;
 }
 
-.add-links a{
-    text-decoration: none;
-    display: flex;
-    align-items: center;
+.example-post {
+    margin-top: 5px; /* Adicione a margem inferior desejada */
+
+}
+
+.example-post .user-profile p{
+    margin-bottom: 20px;
+    font-weight: bolder;
+}
+
+.post-txt{
+    word-wrap: break-word;
+    padding-left: 60px;
+    width: 90%;
+}
+
+.post-txt{
+    font-size: 18px;
+}
+
+/* Estilo para o novo post */
+
+.new-post {
+    width: 40%;
+    background-color: #fff;
+    border-radius: 6px;
+    padding: 20px;
     color: black;
-    font-size: 13px;
+    margin: 5px auto; /* Isso centraliza o elemento horizontalmente e adiciona espaço vertical entre os posts */
+    opacity: 0; /* Inicialmente, o novo post está invisível */  
+    transition: opacity  0.5s ease; /* Adicione uma transição à propriedade opacity */
 }
 
-.add-links a span{
-    width: 20px;
+/* Estilo da foto do usuário no novo post */
+.new-post .user-profile img {
+    width: 55px;
+    margin-right: 10px;
+}
+
+/* Estilo do nome de usuário no novo post */
+.new-post .user-profile p {
+     margin-bottom: 20px;
+     font-weight: bolder;
+   
+}
+
+/* Adicione uma classe para a animação no novo post */
+.new-post.show {
+    opacity: 1;
+}
+
+.txt-post{
+    padding-top: 10px;
+    margin-left: 55px;
+    font-size: 1.3em;
 
 }
 
 
+.add-links input[type="button"]{
+    background-color: #000;
+    color: white;
+    border: none;
+    font-size: 16px;
+    padding: 10px 18px;
+    border-radius: 10px;
+    cursor: pointer;   
+    margin-left: 75%;
+    margin-top: 5px;
+}
+
+.add-links input[type="button"]:hover{
+    background-color: #1b1c19d5;
+}
+
+/* Estilo para a seção de comentários */
+.comments {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Título "Comentários" */
+.comments h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Lista de comentários */
+.comment-list {
+    max-height: 150px; /* Define uma altura máxima para a lista de comentários, com uma barra de rolagem quando necessário */
+    overflow-y: auto; /* Adiciona uma barra de rolagem vertical se a lista de comentários exceder a altura máxima */
+}
+
+/* Estilo dos comentários individuais */
+.comment {
+    padding: 5px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+/* Campo de entrada de comentário e botão "Comentar" */
+.comment-input {
+    margin-top: 10px;
+}
+
+.comment-input input[type="text"] {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.comment-input button {
+    margin-top: 5px;
+    padding: 5px 10px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.comment-input button:hover {
+    background-color: #1b1c19d5;
+}
+
+/* Estilo do botão de curtir */
+.like-button {
+    margin-top: 5px;
+    padding: 5px 10px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Estilo para o botão de curtir quando já foi curtido */
+.like-button.liked {
+    background-color: green;
+    color: #fff;
+}
+
+/* Estilo para o rodapé */
+footer {
+    background-color: #0F1313;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+.highlight {
+    background-color: yellow;
+    font-weight: bold;
+}

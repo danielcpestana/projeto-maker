@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maker Login</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <div class="main-login">
+        <div class="left-login">
+            <h1>Maker</h1>
+            <h2>O Maker é uma rede para pessoas <br> que desejam ter uma troca de experiências</h2>
+            <img src="imagens/desktop computer-amico.png" class="left-login-image" alt="wallpaper maker">
+        </div>
+        <div class="right-login">
+            <div class="card-login">
+                <h1>ENTRAR</h1>
+                <!-- <h2>Ao continuar, você concorda com as nossas diretrizes e nossas <a href="#">Políticas de Privacidade</a></h2>-->
+                <div class="textfield">
+                    <label for="usuario">Usuario</label>
+                    <input type="text" name="usuario" onchange="validateFields()" placeholder="Escreva seu Email">
+                </div>
+                <div class="textfield">
+                    <label for="senha">Senha</label>
+                    <i class="fa fa-eye" aria-hidden="true"></i>
+                    <input type="password" name="senha" placeholder="Escreva sua Senha">
+                </div>
+                <button class="btn-login" type="submit">Login</button>
+                <!-- --><button class="btn-cadastrar"><a href="cadastro.html" >Cadastre-se</a></button>
+                
+            </div>
+        </div>
+    </div>
+    <script src="valida.js"></script>
+    
+</body>
+</html>
