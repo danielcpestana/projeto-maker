@@ -12,7 +12,7 @@ body * {
 .main-login {
     width: 100vw;
     height: 100vh;
-    background:  #1B1C19;
+    background: #0F1313;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,12 +28,12 @@ body * {
 }
 
 .left-login > h1{
-    color: #fff;
+    color: white;
     font-size: 3em;
 }
 
 .left-login > h2{
-    color: #ffffff7e;
+    color: rgba(255, 255, 255, 0.521);
 }
 
 .right-login{
@@ -51,9 +51,9 @@ body * {
     align-items: center;
     flex-direction: column;
     padding: 30px 35px;
-    background: #0F1313;
+    background: #141414f6;
     border-radius: 20px;
-    box-shadow: 0px 10px 40px #00000056;
+    box-shadow: 0px 10px 40px #00000031;
     
 }
 
@@ -86,7 +86,7 @@ body * {
     border: none;
     border-radius: 10px;
     padding: 15px;
-    background: #1B1C19;
+    background: #555555;
     color: white;
     font-size: 12pt;    
     box-shadow: 0px 10px 40px #00000056;
@@ -113,10 +113,10 @@ body * {
     text-transform: uppercase;
     font-weight: 800;
     letter-spacing: 3px;
-    color: #2b134b;
+    color: rgb(43, 43, 43);
     background: #fff;
     cursor: pointer;
-    box-shadow: 0px 10px 40px -12px #ffffff7c;
+    box-shadow: 0px 10px 40px -12px #ffffff2c;
 
 }
 
@@ -130,10 +130,16 @@ body * {
     text-transform: uppercase;
     font-weight: 800;
     letter-spacing: 3px;
-    color: #2b134b;
+    color: rgb(43, 43, 43);
     background: #fff;
     cursor: pointer;
-    box-shadow: 0px 10px 40px -12px #ffffff81;
+    box-shadow: 0px 10px 40px -12px #ffffff2c;
+}
+
+.btn-cadastrar  a{
+    text-decoration: none;
+    color: rgb(43, 43, 43);
+
 }
 
 .left-login-image {
@@ -183,21 +189,42 @@ body * {
 }
 
 
-.card-login #msg-Error {
+#msg-Error {
     text-align: center;
     color: #ff0000;
     background-color: #ffbbbb;
-    padding: 10px;
+    padding: 5px;
     border-radius: 4px;
+    width: 100%;
     display: none;
+    
+    
 }
 
-.card-login #msg-Sucess {
+#msg-Sucess {
     text-align: center;
     color: #00bb00;
-    background-color: #bbffbe;
-    padding: 10px;
+    background-color: #1b1d1b;
+    padding: 5px;
     border-radius: 4px;
+    width: 100%;
     display: none;
+    
 
+}
+
+#btn-cadastrando{
+    width: 100%;
+    padding: 16px 0px;
+    margin: 20px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: rgb(43, 43, 43);
+    background: #fff;
+    cursor: pointer;
+    box-shadow: 0px 10px 40px -12px #ffffff2c;
 }
