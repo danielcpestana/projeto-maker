@@ -98,7 +98,7 @@
         <div id="post-container"></div>
       
         <!-- Posts aleatorios de Exemplo-->
-        <div class="post example-post">
+        <div class="post example-post" data-post-id="11">
             <div class="user-profile">
                
                 <img id="imagem-perfil" src="imagens/tokyo.jpg" alt="Nome do Usuário 1"> <p>CraftyInventor</p>
@@ -120,7 +120,7 @@
             <!-- Botão de Curtir (sem contagem) -->
             <button class="like-button" onclick="likePost(this)">Curtir</button>
         </div>
-        <div class="post example-post">
+        <div class="post example-post" data-post-id="12">
             <div class="user-profile">
                 <img id="imagem-perfil" src="imagens/51.jpg" alt="Nome do Usuário 1">
                 <p>DIYMastermind</p>
@@ -132,17 +132,17 @@
             <!-- Seção de Comentários -->
             <div class="comments">
                 <h2>Comentários</h2>
-                <div class="comment-list" id="comment-list"></div>
+                <div class="comment-list" ></div>
                 <div class="comment-input">
                     <input type="text" placeholder="Adicione um comentário">
-                    <button onclick="addComment(this)">Comentar</button>
+                    <button onclick="addCommentExample(this, 'Nome do Usuário')">Comentar</button>
                 </div>
             </div>
             
             <!-- Botão de Curtir (sem contagem) -->
             <button class="like-button" onclick="likePost(this)">Curtir</button>
         </div>
-        <div class="post example-post">
+        <div class="post example-post" data-post-id="13">
             <div class="user-profile">
                 <img id="imagem-perfil" src="imagens/girl.jpg" alt="Nome do Usuário 1" >
                 <p>MakerArtisan</p>
@@ -154,17 +154,17 @@
             <!-- Seção de Comentários -->
             <div class="comments">
                 <h2>Comentários</h2>
-                <div class="comment-list" id="comment-list"></div>
+                <div class="comment-list" ></div>
                 <div class="comment-input">
                     <input type="text" placeholder="Adicione um comentário">
-                    <button onclick="addComment(this)">Comentar</button>
+                    <button onclick="addCommentExample(this, 'Nome do Usuário')">Comentar</button>
                 </div>
             </div>
             
             <!-- Botão de Curtir (sem contagem) -->
             <button class="like-button" onclick="likePost(this)">Curtir</button>
         </div>
-        <div class="post example-post">
+        <div class="post example-post" data-post-id="14">
             <div class="user-profile">
                 <img id="imagem-perfil" src="imagens/midnight.jpg" alt="Nome do Usuário 1">
                 <p>CreativeTinker</p>
@@ -176,17 +176,17 @@
             <!-- Seção de Comentários -->
             <div class="comments">
                 <h2>Comentários</h2>
-                <div class="comment-list" id="comment-list"></div>
+                <div class="comment-list" ></div>
                 <div class="comment-input">
                     <input type="text" placeholder="Adicione um comentário">
-                    <button onclick="addComment(this)">Comentar</button>
+                    <button onclick="addCommentExample(this, 'Nome do Usuário')">Comentar</button>
                 </div>
             </div>
             
             <!-- Botão de Curtir (sem contagem) -->
             <button class="like-button" onclick="likePost(this)">Curtir</button>
         </div>
-        <div class="post example-post">
+        <div class="post example-post" data-post-id="15">
             <div class="user-profile">
                 <img id="imagem-perfil" src="imagens/olho.jpg" alt="Nome do Usuário 1">
                 <p>BuildCraftsmen</p>
@@ -198,10 +198,10 @@
             <!-- Seção de Comentários -->
             <div class="comments">
                 <h2>Comentários</h2>
-                <div class="comment-list" id="comment-list"></div>
+                <div class="comment-list" ></div>
                 <div class="comment-input">
                     <input type="text" placeholder="Adicione um comentário">
-                    <button onclick="addComment(this)">Comentar</button>
+                    <button onclick="addCommentExample(this, 'Nome do Usuário')">Comentar</button>
                 </div>
             </div>
             
@@ -212,6 +212,8 @@
     <footer>
         <p>&copy; 2023 Seu Nome. Todos os direitos reservados.</p>
       </footer>
-    <script src="js/script.js"></script>
+      <script src="js/valida.js"></script>
+      <script src="js/cadastrar.js"></script>
+      <script src="js/script.js"></script>
 </body>
 </html>

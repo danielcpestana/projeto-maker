@@ -20,7 +20,7 @@
         <!-- Barra de pesquisa e âncoras de login/sair -->
         <div class="navbar">
             <div class="busca">
-                <input type="text" name="" id="search-input" placeholder="Pesquise..." oninput="searchPosts()" onkeydown="handleSearchInput(event)" >
+                <input type="text" name="" id="search-input" placeholder="Pesquise..." >
                 <i id="buscaIcon" class="fas fa-search" onclick="searchPosts()"></i>
             </div>
             <ul>
@@ -90,6 +90,8 @@
 
                 <div class="add-links">
                     <input type="button" value="Enviar"onclick="addPost()">
+                    <button id="clear-posts-button">Limpar Todas as Postagens</button>
+
                 </div>
 
             </div>
@@ -98,7 +100,7 @@
         <div id="post-container"></div>
       
         <!-- Posts aleatorios de Exemplo-->
-        <div class="post example-post">
+        <div class="post example-post" data-post-id="1">
             <div class="user-profile">
                
                 <img id="imagem-perfil" src="imagens/gato.jpg" alt="Nome do Usuário 1"> <p>TechExplorer</p>
@@ -110,17 +112,20 @@
             <!-- Seção de Comentários -->
             <div class="comments">
                 <h2>Comentários</h2>
-                <div class="comment-list" id="comment-list"></div>
+                <div class="comment-list" ></div>
                 <div class="comment-input">
                     <input type="text" placeholder="Adicione um comentário">
-                    <button onclick="addComment(this)">Comentar</button>
+                    <button onclick="addCommentExample(this)">Comentar</button>
                 </div>
             </div>
             
             <!-- Botão de Curtir (sem contagem) -->
-            <button class="like-button" onclick="likePost(this)">Curtir</button>
+            <button class="like-button" data-likes="0" data-liked="false" data-post-id="1" onclick="likePostExample(this, 1)">Curtir (0)</button>
+            <button id="reset-likes-button" onclick="resetLikes()">Redefinir Curtidas</button>
+
+
         </div>
-        <div class="post example-post">
+        <div class="post example-post" data-post-id="2">
             <div class="user-profile">
                 <img id="imagem-perfil" src="imagens/lilo.jpg" alt="Nome do Usuário 1">
                 <p>InnovatorX</p>
@@ -132,17 +137,18 @@
             <!-- Seção de Comentários -->
             <div class="comments">
                 <h2>Comentários</h2>
-                <div class="comment-list" id="comment-list"></div>
+                <div class="comment-list" ></div>
                 <div class="comment-input">
                     <input type="text" placeholder="Adicione um comentário">
-                    <button onclick="addComment(this)">Comentar</button>
+                    <button onclick="addCommentExample(this)">Comentar</button>
                 </div>
             </div>
             
             <!-- Botão de Curtir (sem contagem) -->
-            <button class="like-button" onclick="likePost(this)">Curtir</button>
+            <button class="like-button" data-likes="0" data-liked="false" data-post-id="1" onclick="likePostExample(this, 2)">Curtir (0 curtidas)</button>
+            
         </div>
-        <div class="post example-post">
+        <div class="post example-post" data-post-id="3">
             <div class="user-profile">
                 <img id="imagem-perfil" src="imagens/fotografia-para-perfil2.jpg" alt="Nome do Usuário 1" >
                 <p>CodeWizard</p>
@@ -154,17 +160,18 @@
             <!-- Seção de Comentários -->
             <div class="comments">
                 <h2>Comentários</h2>
-                <div class="comment-list" id="comment-list"></div>
+                <div class="comment-list" ></div>
                 <div class="comment-input">
                     <input type="text" placeholder="Adicione um comentário">
-                    <button onclick="addComment(this)">Comentar</button>
+                    <button onclick="addCommentExample(this)">Comentar</button>
                 </div>
             </div>
             
             <!-- Botão de Curtir (sem contagem) -->
-            <button class="like-button" onclick="likePost(this)">Curtir</button>
+            <button class="like-button" data-likes="0" data-liked="false" data-post-id="1" onclick="likePostExample(this, 3)">Curtir (0 curtidas)</button>
+            
         </div>
-        <div class="post example-post">
+        <div class="post example-post" data-post-id="4">
             <div class="user-profile">
                 <img id="imagem-perfil" src="imagens/anime1.jpeg" alt="Nome do Usuário 1">
                 <p>DesignNinja</p>
@@ -176,17 +183,18 @@
             <!-- Seção de Comentários -->
             <div class="comments">
                 <h2>Comentários</h2>
-                <div class="comment-list" id="comment-list"></div>
+                <div class="comment-list" ></div>
                 <div class="comment-input">
                     <input type="text" placeholder="Adicione um comentário">
-                    <button onclick="addComment(this)">Comentar</button>
+                    <button onclick="addCommentExample(this)">Comentar</button>
                 </div>
             </div>
             
             <!-- Botão de Curtir (sem contagem) -->
-            <button class="like-button" onclick="likePost(this)">Curtir</button>
+            <button class="like-button" data-likes="0" data-liked="false" data-post-id="1" onclick="likePostExample(this, 4)">Curtir (0 curtidas)</button>
+           
         </div>
-        <div class="post example-post">
+        <div class="post example-post" data-post-id="5">
             <div class="user-profile">
                 <img id="imagem-perfil" src="imagens/pato.jpg" alt="Nome do Usuário 1">
                 <p>PrintMaster</p>
@@ -198,15 +206,16 @@
             <!-- Seção de Comentários -->
             <div class="comments">
                 <h2>Comentários</h2>
-                <div class="comment-list" id="comment-list"></div>
+                <div class="comment-list" ></div>
                 <div class="comment-input">
                     <input type="text" placeholder="Adicione um comentário">
-                    <button onclick="addComment(this)">Comentar</button>
+                    <button onclick="addCommentExample(this)">Comentar</button>
                 </div>
             </div>
             
             <!-- Botão de Curtir (sem contagem) -->
-            <button class="like-button" onclick="likePost(this)">Curtir</button>
+            <button class="like-button" data-likes="0" data-liked="false" data-post-id="1" onclick="likePostExample(this, 5)">Curtir (0 curtidas)</button>
+            
         </div>
     </main>
     <footer>
@@ -214,9 +223,9 @@
             <p>&copy; 2023. Todos os direitos reservados.</p>
         </div>
     </footer>
-    
-    
     <script src="js/script.js"></script>
-    <script src="js/localStorage.js"></script>
+    <script src="js/valida.js"></script>
+    <script src="js/cadastrar.js"></script>
+    
 </body>
 </html>

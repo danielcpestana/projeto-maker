@@ -280,6 +280,9 @@ main h1{
 
 
 
+.post {
+    margin-bottom: 5px;
+}
 .post-txt{
     width: 100%;
     padding-left: 60px;
@@ -316,34 +319,8 @@ main h1{
 
 /* Estilo para o novo post */
 
-.new-post {
-    width: 40%;
-    background-color: #fff;
-    border-radius: 6px;
-    padding: 20px;
-    color: black;
-    margin: 5px auto; /* Isso centraliza o elemento horizontalmente e adiciona espaço vertical entre os posts */
-    opacity: 0; /* Inicialmente, o novo post está invisível */  
-    transition: opacity  0.5s ease; /* Adicione uma transição à propriedade opacity */
-}
 
-/* Estilo da foto do usuário no novo post */
-.new-post .user-profile img {
-    width: 55px;
-    margin-right: 10px;
-}
 
-/* Estilo do nome de usuário no novo post */
-.new-post .user-profile p {
-     margin-bottom: 20px;
-     font-weight: bolder;
-   
-}
-
-/* Adicione uma classe para a animação no novo post */
-.new-post.show {
-    opacity: 1;
-}
 
 .txt-post{
     padding-top: 10px;
@@ -459,7 +436,20 @@ footer p {
     font-size: 14px;
 }
 
-.highlight {
+.highlighted {
     background-color: yellow;
+    text-decoration: underline;
     font-weight: bold;
 }
+
+/* Adicione este estilo ao seu arquivo CSS */
+.user-info {
+    margin-bottom: 10px; /* Ajuste o valor conforme necessário */
+    font-size: 1.3em;
+}
+
+.post-text {
+    margin: 20px;/* Outros estilos para o conteúdo da postagem */
+    font-size:18px;
+}
+
