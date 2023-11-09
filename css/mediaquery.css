@@ -20,13 +20,18 @@
     }
 
     ul li a{
-        display: none;      
+        font-size: 13px;     
     }
 
-    .main{
-        margin-left: 6px;
+    .post{
+        width: 80%;
+        transition: all 0.3s;
     }
 
+    .post-txt{
+        padding-left: 30px;
+        padding-top: 10px;
+    }
     .add-links input[type="button"]{
         transition: all 0.3s;
 
@@ -34,8 +39,9 @@
 
     }
     .post-txt p{
-        font-size:14px;
+        font-size:16px;
         transition: all 0.2s;
+        
     }
 }
 
@@ -55,6 +61,10 @@
         visibility: hidden;
     }
 
+    .post{
+        width: 60%;
+        transition: all 0.3s;
+    }
     .main{
         transition: margin 0.4s;
         margin-left: 78px;

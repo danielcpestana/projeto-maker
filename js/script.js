@@ -1,3 +1,15 @@
+function toggleMenu(){
+    const menuMobile = document.getElementById('menu-mobile')
+
+    if(menuMobile.className==="menu-mobile-active"){
+        menuMobile.className = "menu-mobile"
+    }else{
+        menuMobile.className = "menu-mobile-active"
+    }
+}
+
+
+
 // Função para salvar uma postagem no Local Storage
 function savePostToLocalStorage(posts) {
     localStorage.setItem("posts", JSON.stringify(posts));
