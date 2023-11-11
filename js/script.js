@@ -92,8 +92,9 @@ function addPost() {
         return;
     }
 
+    const nomeUsuario = localStorage.getItem("nomeUsuario");
     const post = {
-        user: "Usuário", // Substitua pelo nome do usuário ou qualquer outra informação que desejar
+        user: nomeUsuario || "Usuário", // Substitua pelo nome do usuário ou qualquer outra informação que desejar
         text: postText,
         likes: 0,
         comments: []
