@@ -95,8 +95,11 @@ function addPost() {
     }
 
     const nomeUsuario = localStorage.getItem("nomeUsuario");
+    const listaUsuarios = JSON.parse(localStorage.getItem('listaUser') || '[]');
+    const usuarioEncontrado = listaUsuarios.find(usuario => usuario.nomeCad === nomeUsuario);
+
     const post = {
-        user: nomeUsuario || "Usuário", // Substitua pelo nome do usuário ou qualquer outra informação que desejar
+        user: usuarioEncontrado ? usuarioEncontrado.userCad : "Usuário", // Use o nome de usuário, se disponível
         text: postText,
         likes: 0,
         comments: []
