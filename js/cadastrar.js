@@ -132,8 +132,10 @@ function clicando(){
           window.location.href = 'https://danielcpestana.github.io/projeto-maker/maker.html';
       } else {
           // Exibir mensagem de erro se as credenciais estiverem incorretas
-          msgLoginError.setAttribute('style', 'display: block');
+          msgLoginError.setAttribute('style', 'display: block', 'color: red');
           msgLoginError.innerHTML = '<strong>Usuário ou senha incorretos</strong>';
+          msgLoginError.setAttribute('style', 'color: red');
+          
       }
   }
   
