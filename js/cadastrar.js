@@ -106,7 +106,7 @@ function clicando(){
 
         },3000)
 
-        window.location.href = 'http://127.0.0.1:5500/index.html'
+        window.location.href = 'https://danielcpestana.github.io/projeto-maker/index.html'
     }  
     else {
         msgError.setAttribute('style', 'display: block')
@@ -129,7 +129,7 @@ function clicando(){
       if (usuarioEncontrado) {
           // Usuário autenticado com sucesso, redirecione para a página principal
           localStorage.setItem('nomeUsuario', usuarioEncontrado.nomeCad);
-          window.location.href = 'http://127.0.0.1:5500/maker.html';
+          window.location.href = 'https://danielcpestana.github.io/projeto-maker/maker.html';
       } else {
           // Exibir mensagem de erro se as credenciais estiverem incorretas
           msgLoginError.setAttribute('style', 'display: block');
