@@ -3,227 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/mediaquery.css" media="screen">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <title>Maker Login</title>
+    <link rel="stylesheet" href="css/login.css">
     <link rel="shortcut icon" href="imagens/favicon-32x32.png" type="image/x-icon">
-    <title>Maker</title>
 </head>
 <body>
-    <!-- Cabeçalho do site -->
-    <header>
-        <!-- Logo do site -->
-        <div class="logo">
-            <i class="fa-solid fa-laptop-code"></i>
+    <div class="main-login">
+        <div class="left-login">
             <h1>Maker</h1>
+            <h2>O Maker é uma rede para pessoas <br> que desejam ter uma troca de experiências</h2>
+            <img src="imagens/desktop computer-amico.png" class="left-login-image" alt="wallpaper maker">
         </div>
-        <!-- Barra de pesquisa e âncoras de login/sair -->
-        <div class="navbar">
-            <div class="busca">
-                <input type="text" name="" id="search-input" placeholder="Pesquise..." >
-                <i id="buscaIcon" class="fas fa-search" onclick="searchPosts()"></i>
-            </div>
-            <ul>
-                <li>
-                    <i class="fa-solid fa-user"></i>
-                    <a href="login.html" id="user-link">Entrar</a>
-                </li>
-                <li>
-                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                    <a href="#" >Sair</a>
-                </li>
-            </ul>
-        </div>
-    </header>
-    <!-- Barra de navegação lateral -->
-    <aside class="sidebar">
-        <nav>
-            <a href="index.html">
-                <span>
-                    <i class="fa-solid fa-house"></i>
-                    <span>Home</span>
-                </span>
-            </a>
-            <a href="programacao.html">
-                <span>
-                    <i class="fa-solid fa-terminal"></i>
-                    <span>Programação</span>
-                </span>
-            </a>
-            <a href="marketing.html">
-                <span>
-                    <i class="fa-solid fa-bullhorn"></i>
-                    <span>Marketing</span>
-                </span>
-            </a>
-        </nav>
-    </aside>
-    <!-- Botão do menu para dispositivos móveis -->
-    <button class="button-mobile" onclick="toggleMenu()">
-        <i class="material-symbols-outlined">menu</i>
-        <span>Menu</span>
-    </button>
-    <!-- Menu de navegação para dispositivos móveis -->
-    <nav class="menu-mobile" id="menu-mobile">
-        <button class="button-close" onclick="toggleMenu()">
-            <span>
-                <i class="material-symbols-outlined">close</i>
-            </span>
-        </button>
-        <a href="#"><i class="fa-solid fa-house"></i><span>&nbsp;Home</span></a>
-        <a href="programacao.html"><i class="fa-solid fa-terminal"></i><span>&nbsp;Programação</span></a>
-        <a href="marketing.html"><i class="fa-solid fa-bullhorn"></i><span>&nbsp;Marketing</span></a>
-    </nav>
-    <!-- Conteúdo principal -->
-    <main>
-        <div class="post">
-            <!-- Foto do usuário -->
-            <div class="user-profile">
-
-                <img id="imagem-perfil" src="imagens/Gojo-Satoru.jpg" alt="">
+        <div class="right-login">
+            <div class="card-login">
+                <h1>ENTRAR</h1>
+                <!-- <h2>Ao continuar, você concorda com as nossas diretrizes e nossas <a href="#">Políticas de Privacidade</a></h2>-->
+                <div class="textfield">
+                    <label for="loginUsuario">Usuário</label>
+                    <input type="text" id="loginUsuario" name="loginUsuario" placeholder="Escreva seu Usuário">
+                </div>
+                <div class="textfield">
+                    <label for="loginSenha">Senha</label>
+                    <i class="fa fa-eye" aria-hidden="true"></i>
+                    <input type="password" id="loginSenha" name="loginSenha" placeholder="Escreva sua Senha">
+                </div>
+                <button class="btn-login" id="btn-login" type="button" onclick="fazerLogin()">Login</button>
+                <div id="msg-LoginError" class="error-message"></div>
+                <button class="btn-cadastrar"><a href="cadastro.html">Cadastre-se</a></button>
+                
                 
             </div>
-            <!-- Caixa de texto para post -->
-            <div class="post-txt">
-
-                <textarea id="post-textarea" rows="2" placeholder="O que você está pensando?"></textarea>
-
-                <div class="add-links">
-                    <input type="button" value="Enviar"onclick="addPost()">
-                    <button id="clear-posts-button">Excluir Posts</button>
-
-                </div>
-
-            </div>
         </div>
-
-        <div id="post-container"></div>
-      
-        <!-- Posts aleatorios de Exemplo-->
-        <div class="post example-post" data-post-id="1">
-            <div class="user-profile">
-               
-                <img id="imagem-perfil" src="imagens/gato.jpg" alt="Nome do Usuário 1"> <p>TechExplorer</p>
-            </div>
-            <div class="post-txt">
-                <p>Para aqueles que estão começando com projetos maker, lembre-se de sempre fazer muita pesquisa e planejamento antes de começar. É a chave para o sucesso! </p>
-            </div>
-            
-            <!-- Seção de Comentários -->
-            <div class="comments">
-                <h2>Comentários</h2>
-                <div class="comment-list" ></div>
-                <div class="comment-input">
-                    <input type="text" placeholder="Adicione um comentário">
-                    <button onclick="addCommentExample(this)">Comentar</button>
-                </div>
-            </div>
-            
-            <!-- Botão de Curtir (sem contagem) -->
-            <button class="like-button" data-likes="0" data-liked="false" data-post-id="1" onclick="likePostExample(this, 1)">Curtir (0)</button>
-            <button id="reset-likes-button" onclick="resetLikes()">Redefinir Curtidas</button>
-
-
-        </div>
-        <div class="post example-post" data-post-id="2">
-            <div class="user-profile">
-                <img id="imagem-perfil" src="imagens/lilo.jpg" alt="Nome do Usuário 1">
-                <p>InnovatorX</p>
-            </div>
-            <div class="post-txt">
-                <p>Encontrei uma ótima fonte de recursos gratuitos para projetos maker. Compartilhando o link aqui: [Inserir URL]. Espero que seja útil para vocês! </p>
-            </div>
-            
-            <!-- Seção de Comentários -->
-            <div class="comments">
-                <h2>Comentários</h2>
-                <div class="comment-list" ></div>
-                <div class="comment-input">
-                    <input type="text" placeholder="Adicione um comentário">
-                    <button onclick="addCommentExample(this)">Comentar</button>
-                </div>
-            </div>
-            
-            <!-- Botão de Curtir (sem contagem) -->
-            <button class="like-button" data-likes="0" data-liked="false" data-post-id="1" onclick="likePostExample(this, 2)">Curtir (0 curtidas)</button>
-            
-        </div>
-        <div class="post example-post" data-post-id="3">
-            <div class="user-profile">
-                <img id="imagem-perfil" src="imagens/fotografia-para-perfil2.jpg" alt="Nome do Usuário 1" >
-                <p>CodeWizard</p>
-            </div>
-            <div class="post-txt">
-                <p>Procurando uma ideia para um projeto maker no final de semana? Que tal construir um pequeno sistema de automação residencial usando um Raspberry Pi? </p>
-            </div>
-            
-            <!-- Seção de Comentários -->
-            <div class="comments">
-                <h2>Comentários</h2>
-                <div class="comment-list" ></div>
-                <div class="comment-input">
-                    <input type="text" placeholder="Adicione um comentário">
-                    <button onclick="addCommentExample(this)">Comentar</button>
-                </div>
-            </div>
-            
-            <!-- Botão de Curtir (sem contagem) -->
-            <button class="like-button" data-likes="0" data-liked="false" data-post-id="1" onclick="likePostExample(this, 3)">Curtir (0 curtidas)</button>
-            
-        </div>
-        <div class="post example-post" data-post-id="4">
-            <div class="user-profile">
-                <img id="imagem-perfil" src="imagens/anime1.jpeg" alt="Nome do Usuário 1">
-                <p>DesignNinja</p>
-            </div>
-            <div class="post-txt">
-                <p>Minha mais recente impressão 3D ficou incrível! Estou realmente impressionado com o que essa tecnologia pode fazer. </p>
-            </div>
-            
-            <!-- Seção de Comentários -->
-            <div class="comments">
-                <h2>Comentários</h2>
-                <div class="comment-list" ></div>
-                <div class="comment-input">
-                    <input type="text" placeholder="Adicione um comentário">
-                    <button onclick="addCommentExample(this)">Comentar</button>
-                </div>
-            </div>
-            
-            <!-- Botão de Curtir (sem contagem) -->
-            <button class="like-button" data-likes="0" data-liked="false" data-post-id="1" onclick="likePostExample(this, 4)">Curtir (0 curtidas)</button>
-           
-        </div>
-        <div class="post example-post" data-post-id="5">
-            <div class="user-profile">
-                <img id="imagem-perfil" src="imagens/pato.jpg" alt="Nome do Usuário 1">
-                <p>PrintMaster</p>
-            </div>
-            <div class="post-txt">
-                <p>Compartilhando meu mais recente projeto maker! Acabei de construir um robô controlado por Bluetooth. Foi um desafio divertido, mas estou muito satisfeito com o resultado. </p>
-            </div>
-            
-            <!-- Seção de Comentários -->
-            <div class="comments">
-                <h2>Comentários</h2>
-                <div class="comment-list" ></div>
-                <div class="comment-input">
-                    <input type="text" placeholder="Adicione um comentário">
-                    <button onclick="addCommentExample(this)">Comentar</button>
-                </div>
-            </div>
-            
-            <!-- Botão de Curtir (sem contagem) -->
-            <button class="like-button" data-likes="0" data-liked="false" data-post-id="1" onclick="likePostExample(this, 5)">Curtir (0 curtidas)</button>
-            
-        </div>
-    </main>
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2023. Todos os direitos reservados.</p>
-        </div>
-    </footer>
+    </div>
     <script src="js/script.js"></script>
     <script src="js/cadastrar.js"></script>
     

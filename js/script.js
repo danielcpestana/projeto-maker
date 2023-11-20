@@ -62,6 +62,8 @@ function displayPosts(posts) {
                     <button onclick="addComment(this, ${postIndex})">Comentar</button>
                 </div>
                 <button class="like-button" data-likes="${post.likes}" onclick="likePost(this)">Curtir (${post.likes} ${post.likes === 1 ? 'curtida' : 'curtidas'})</button>
+                <button class="delete-post-button" onclick="deletePost(${postIndex})">Excluir Post</button>
+        </div>
             </div>
         `;
 
@@ -320,11 +322,17 @@ function clearHighlight() {
 }
 
 
-// Função para excluir todas as postagens do Local Storage
-function clearAllPosts() {
-    localStorage.removeItem("posts");
-    displayPosts([]); // Atualize a exibição para mostrar a lista vazia de postagens
+function deletePost(postIndex) {
+    const posts = loadPosts();
+    const confirmDelete = confirm("Tem certeza de que deseja excluir este post?");
+
+    if (confirmDelete) {
+        posts.splice(postIndex, 1); // Remove o post do array
+        savePostToLocalStorage(posts); // Atualiza o Local Storage
+        displayPosts(loadPosts()); // Atualiza a exibição
+    }
 }
+
 
 // // // Função para apagar todos os comentários nas postagens de exemplo
 //  function clearAllExampleComments() {

@@ -16,13 +16,13 @@
         <!-- Logo do site -->
         <div class="logo">
             <i class="fa-solid fa-laptop-code"></i>
-            <h1>MakerMarketing</h1>
+            <h1>Maker</h1>
         </div>
         <!-- Barra de pesquisa e âncoras de login/sair -->
         <div class="navbar">
             <div class="busca">
-                <input type="text" name="" id="" placeholder="Pesquise...">
-                <i id="buscaIcon" class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" name="" id="search-input" placeholder="Pesquise..." >
+                <i id="buscaIcon" class="fas fa-search" onclick="searchPosts()"></i>
             </div>
             <ul>
                 <li>
@@ -31,7 +31,7 @@
                 </li>
                 <li>
                     <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                    <a href="index.html">Sair</a>
+                    <a href="index.html" >Sair</a>
                 </li>
             </ul>
         </div>
@@ -91,6 +91,8 @@
 
                 <div class="add-links">
                     <input type="button" value="Enviar"onclick="addPost()">
+                    
+
                 </div>
 
             </div>
@@ -99,35 +101,13 @@
         <div id="post-container"></div>
       
         <!-- Posts aleatorios de Exemplo-->
-        <div class="post example-post" data-post-id="11">
+        <div class="post example-post" data-post-id="1">
             <div class="user-profile">
                
-                <img id="imagem-perfil" src="imagens/tokyo.jpg" alt="Nome do Usuário 1"> <p>CraftyInventor</p>
+                <img id="imagem-perfil" src="imagens/gato.jpg" alt="Nome do Usuário 1"> <p>TechExplorer</p>
             </div>
             <div class="post-txt">
-                <p>Se você é novo na comunidade "maker" e está se sentindo um pouco perdido, não se preocupe! Começar é mais fácil do que parece. Neste post, compartilho dicas e recursos para ajudar os iniciantes a dar os primeiros passos no emocionante mundo do "faça você mesmo". </p>
-            </div>
-            
-            <!-- Seção de Comentários -->
-            <div class="comments">
-                <h2>Comentários</h2>
-                <div class="comment-list" id="comment-list"></div>
-                <div class="comment-input">
-                    <input type="text" placeholder="Adicione um comentário">
-                    <button onclick="addComment(this)">Comentar</button>
-                </div>
-            </div>
-            
-            <!-- Botão de Curtir (sem contagem) -->
-            <button class="like-button" onclick="likePost(this)">Curtir</button>
-        </div>
-        <div class="post example-post" data-post-id="12">
-            <div class="user-profile">
-                <img id="imagem-perfil" src="imagens/51.jpg" alt="Nome do Usuário 1">
-                <p>DIYMastermind</p>
-            </div>
-            <div class="post-txt">
-                <p>Olá pessoal, estou trabalhando em um projeto eletrônico e estou com dúvidas sobre como dimensionar o resistor apropriado. Alguém pode me dar algumas dicas ou recursos para entender melhor como escolher o valor certo? </p>
+                <p>Para aqueles que estão começando com projetos maker, lembre-se de sempre fazer muita pesquisa e planejamento antes de começar. É a chave para o sucesso! </p>
             </div>
             
             <!-- Seção de Comentários -->
@@ -136,20 +116,23 @@
                 <div class="comment-list" ></div>
                 <div class="comment-input">
                     <input type="text" placeholder="Adicione um comentário">
-                    <button onclick="addCommentExample(this, 'Nome do Usuário')">Comentar</button>
+                    <button onclick="addCommentExample(this)">Comentar</button>
                 </div>
             </div>
             
             <!-- Botão de Curtir (sem contagem) -->
-            <button class="like-button" onclick="likePost(this)">Curtir</button>
+            <button class="like-button" data-likes="0" data-liked="false" data-post-id="1" onclick="likePostExample(this, 1)">Curtir (0)</button>
+            <button id="reset-likes-button" onclick="resetLikes()">Redefinir Curtidas</button>
+
+
         </div>
-        <div class="post example-post" data-post-id="13">
+        <div class="post example-post" data-post-id="2">
             <div class="user-profile">
-                <img id="imagem-perfil" src="imagens/girl.jpg" alt="Nome do Usuário 1" >
-                <p>MakerArtisan</p>
+                <img id="imagem-perfil" src="imagens/lilo.jpg" alt="Nome do Usuário 1">
+                <p>InnovatorX</p>
             </div>
             <div class="post-txt">
-                <p>Se você é um entusiasta do "faça você mesmo", certamente precisa das ferramentas certas para o trabalho. Neste post, compartilho uma lista de ferramentas essenciais para qualquer maker, desde chaves de fenda e alicates até impressoras 3D e osciloscópios. </p>
+                <p>Novos makers, a dica é: pesquisa e planejamento são essenciais antes de começar qualquer projeto. A chave para o sucesso está nesses passos iniciais! 🚀🔍 </p>
             </div>
             
             <!-- Seção de Comentários -->
@@ -158,20 +141,21 @@
                 <div class="comment-list" ></div>
                 <div class="comment-input">
                     <input type="text" placeholder="Adicione um comentário">
-                    <button onclick="addCommentExample(this, 'Nome do Usuário')">Comentar</button>
+                    <button onclick="addCommentExample(this)">Comentar</button>
                 </div>
             </div>
             
             <!-- Botão de Curtir (sem contagem) -->
-            <button class="like-button" onclick="likePost(this)">Curtir</button>
+            <button class="like-button" data-likes="0" data-liked="false" data-post-id="1" onclick="likePostExample(this, 2)">Curtir (0 curtidas)</button>
+            
         </div>
-        <div class="post example-post" data-post-id="14">
+        <div class="post example-post" data-post-id="3">
             <div class="user-profile">
-                <img id="imagem-perfil" src="imagens/midnight.jpg" alt="Nome do Usuário 1">
-                <p>CreativeTinker</p>
+                <img id="imagem-perfil" src="imagens/fotografia-para-perfil2.jpg" alt="Nome do Usuário 1" >
+                <p>CodeWizard</p>
             </div>
             <div class="post-txt">
-                <p>Tenho o objetivo de construir minha própria estação meteorológica em casa, mas estou um pouco perdido sobre por onde começar. Alguém já fez algo parecido e pode compartilhar dicas ou recursos úteis? </p>
+                <p>Procurando uma ideia para um projeto maker no final de semana? Que tal construir um pequeno sistema de automação residencial usando um Raspberry Pi? </p>
             </div>
             
             <!-- Seção de Comentários -->
@@ -180,20 +164,21 @@
                 <div class="comment-list" ></div>
                 <div class="comment-input">
                     <input type="text" placeholder="Adicione um comentário">
-                    <button onclick="addCommentExample(this, 'Nome do Usuário')">Comentar</button>
+                    <button onclick="addCommentExample(this)">Comentar</button>
                 </div>
             </div>
             
             <!-- Botão de Curtir (sem contagem) -->
-            <button class="like-button" onclick="likePost(this)">Curtir</button>
+            <button class="like-button" data-likes="0" data-liked="false" data-post-id="1" onclick="likePostExample(this, 3)">Curtir (0 curtidas)</button>
+            
         </div>
-        <div class="post example-post" data-post-id="15">
+        <div class="post example-post" data-post-id="4">
             <div class="user-profile">
-                <img id="imagem-perfil" src="imagens/olho.jpg" alt="Nome do Usuário 1">
-                <p>BuildCraftsmen</p>
+                <img id="imagem-perfil" src="imagens/anime1.jpeg" alt="Nome do Usuário 1">
+                <p>DesignNinja</p>
             </div>
             <div class="post-txt">
-                <p>A sustentabilidade é importante, e a reciclagem criativa pode ser uma maneira fantástica de fazer projetos makers únicos. Neste post, compartilho ideias e dicas sobre como transformar objetos reciclados em obras-primas "maker".</p>
+                <p>Minha mais recente impressão 3D ficou incrível! Estou realmente impressionado com o que essa tecnologia pode fazer. </p>
             </div>
             
             <!-- Seção de Comentários -->
@@ -202,18 +187,45 @@
                 <div class="comment-list" ></div>
                 <div class="comment-input">
                     <input type="text" placeholder="Adicione um comentário">
-                    <button onclick="addCommentExample(this, 'Nome do Usuário')">Comentar</button>
+                    <button onclick="addCommentExample(this)">Comentar</button>
                 </div>
             </div>
             
             <!-- Botão de Curtir (sem contagem) -->
-            <button class="like-button" onclick="likePost(this)">Curtir</button>
+            <button class="like-button" data-likes="0" data-liked="false" data-post-id="1" onclick="likePostExample(this, 4)">Curtir (0 curtidas)</button>
+           
+        </div>
+        <div class="post example-post" data-post-id="5">
+            <div class="user-profile">
+                <img id="imagem-perfil" src="imagens/pato.jpg" alt="Nome do Usuário 1">
+                <p>PrintMaster</p>
+            </div>
+            <div class="post-txt">
+                <p>Compartilhando meu mais recente projeto maker! Acabei de construir um robô controlado por Bluetooth. Foi um desafio divertido, mas estou muito satisfeito com o resultado. </p>
+            </div>
+            
+            <!-- Seção de Comentários -->
+            <div class="comments">
+                <h2>Comentários</h2>
+                <div class="comment-list" ></div>
+                <div class="comment-input">
+                    <input type="text" placeholder="Adicione um comentário">
+                    <button onclick="addCommentExample(this)">Comentar</button>
+                </div>
+            </div>
+            
+            <!-- Botão de Curtir (sem contagem) -->
+            <button class="like-button" data-likes="0" data-liked="false" data-post-id="1" onclick="likePostExample(this, 5)">Curtir (0 curtidas)</button>
+            
         </div>
     </main>
     <footer>
-        <p>&copy; 2023 Seu Nome. Todos os direitos reservados.</p>
-      </footer>
-      <script src="js/cadastrar.js"></script>
-      <script src="js/script.js"></script>
+        <div class="footer-content">
+            <p>&copy; 2023. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+    <script src="js/cadastrar.js"></script>
+    
 </body>
 </html>
