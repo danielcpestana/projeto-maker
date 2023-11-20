@@ -259,21 +259,6 @@ function displayExampleLikes() {
     });
 }
 
-function resetLikes() {
-    const examplePosts = document.querySelectorAll(".example-post");
-    examplePosts.forEach(postDiv => {
-        const likeButton = postDiv.querySelector(".like-button");
-        likeButton.setAttribute("data-liked", "false");
-        likeButton.setAttribute("data-likes", "0");
-        likeButton.textContent = "Curtir (0)";
-        likeButton.classList.remove("liked");
-    });
-    
-    // Redefina as informações de curtidas no Local Storage
-    localStorage.removeItem("exampleLikes");
-}
-
-
 
 // Event listener para reverter destaque quando o campo de pesquisa está vazio
 const searchInput = document.querySelector("#search-input");

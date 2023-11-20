@@ -468,3 +468,18 @@ footer p {
     cursor: pointer;
 
 }
+
+.delete-post-button{
+    margin-top: 5px;
+    padding: 5px 10px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+.delete-post-button:hover {
+    background-color: #0000009c; /* Cor de fundo vermelha mais escura ao passar o mouse */
+}
